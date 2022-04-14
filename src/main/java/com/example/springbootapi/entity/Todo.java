@@ -14,6 +14,7 @@ public class Todo {
       private Integer id;
       private String name;
 
+      // getter setter
       public Integer getId() {
             return id;
       }

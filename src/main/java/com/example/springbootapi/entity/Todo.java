@@ -1,35 +1,22 @@
 package com.example.springbootapi.entity;
 
-// import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-// @Data
+import lombok.Data;
+
+// 各フィールドのsetterとgetterを定義してくれる
+@Data
 @Entity
+@Table(name = "todo")
 public class Todo {
       @Id
-      @GeneratedValue(strategy=GenerationType.AUTO)
+      // AUTO
+      @GeneratedValue(strategy=GenerationType.IDENTITY)
       private Integer id;
       private String name;
-
-      // getter setter
-      public Integer getId() {
-            return id;
-      }
-      
-      public void setId(Integer id) {
-            this.id = id;
-      }
-
-      public String getName() {
-            return name;
-      }
-      
-      public void setName(String name) {
-            this.name = name;
-      }
-
       public Todo(){}
 }
